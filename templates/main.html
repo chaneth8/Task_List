@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+
+<html lang = "en">
+    <head>
+        <title>Main Page</title>
+        
+        <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles.css') }}">
+
+    </head>
+    <body class = "centered reg">
+        <header class = "blue_background white_text large">Time Management Web App </header>
+        <header class = "grey_background white_text"> <a href = "/logout" class = "link1"> Click Here To Log Out </a> </header>
+
+        <br> 
+
+        Enter A Reminder To Complete A Task Below: 
+        <form action = "/input" method = "get">
+            <input name = "inputname" type = "text" placeholder = "Enter task name here">
+            <input name = "inputstart" type = "text" placeholder = "Enter start date here">
+            <input name = "inputend" type = "text" placeholder = "Enter end date here">
+            <input type = "submit" class = "submit"> 
+        </form>
+
+        <br>
+
+        Enter A Task You Would Like To Delete Below:
+        <form action = "/delete" method = "get">
+            <input name = "taskname" type = "text" placeholder = "Enter task name here">
+            <input type = "submit" class = "submit"> 
+        </form>
+
+        <br>
+
+        <table class = "table_centered">
+            <thead class = "blue_background white_text">
+                <tr>
+                    <th>Task Name</th>
+                    <th>Start Date</th>
+                    <th>End Date </th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for result in final_results %}
+                    <tr>
+                        <td>{{ result[0] }}</td>
+                        <td>{{ result[1] }}</td>
+                        <td>{{ result[2] }}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+
+        <br> 
+
+        <img src="{{ url_for('static',filename='to_do_list.gif') }}" alt = "to do list gif" width = "300" height = "300">
+
+
+    </body>
+</html> 

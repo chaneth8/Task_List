@@ -1,0 +1,54 @@
+.grey_background {
+    background-color: grey;
+}
+
+.blue_background {
+    background-color: blue;
+}
+
+.white_text{
+    color: white;
+}
+
+.centered {
+    text-align: center;
+}
+
+.reg {
+    font-size: large; 
+}
+
+.large {
+    font-size: 60px;
+}
+
+.table_centered { 
+    margin-left: auto; 
+    margin-right: auto;
+}
+
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+  
+.link1:link, .link1:visited {
+    color: white;
+}
+
+.link1:hover, .link1:active {
+    color: blue;
+}
+
+.link2:link, .link2:visited {
+    color: blue;
+}
+
+.link2:hover, .link2:active {
+    color: red;
+}
+
+.submit:hover {
+    color: white;
+    background: blue;
+}

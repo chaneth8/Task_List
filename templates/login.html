@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+
+<html lang = "en">
+    <head>
+        <title>Login Page</title>
+        
+        <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles.css') }}">
+
+        <script>
+
+            document.addEventListener('DOMContentLoaded', function() {
+                alert('Hello, please type your name to log in below!')
+            });
+
+        </script>
+
+    </head>
+
+    <body class = "centered reg">
+        <header class = "blue_background white_text large">Time Management Web App </header>
+        <br>
+
+        Welcome! To access your list of tasks for the day, start by entering your name:
+        <br>
+
+        <form action = "/login" method = "get">
+            <input name = "name" placeholder = "Enter your name here" type = "text">
+            <input type = "submit" class = "submit"> 
+        </form>
+        <br> 
+
+        <img src="{{ url_for('static',filename='missminutes.jpg') }}" alt="missminutes" width = "500" height = "500">
+
+    </body>
+
+</html> 

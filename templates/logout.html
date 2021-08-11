@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+
+<html lang = "en">
+    <head>
+        <title>Logout Page</title>
+        
+        <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles.css') }}">
+
+        <script>
+
+            document.addEventListener('DOMContentLoaded', function() {
+                alert("Goodbye! We'll miss you!")
+            });
+
+        </script>
+
+    </head>
+
+    <body class = "centered reg">
+        <header class = "blue_background white_text large">Time Management Web App </header>
+        <br> 
+
+        You have successfully logged out! 
+        <br> 
+
+        To login again, click here: <a href = "/" class = "link2"> Log In </a>
+        <br> 
+
+        <img src="{{ url_for('static',filename='motivation.jpg') }}" alt = "motivational quote" width = "400" height = "500">
+    </body>
+</html> 
