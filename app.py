@@ -1,16 +1,17 @@
 from os import environ
-from flask import Flask, render_template, request, session, redirect 
-from flask_session import Session
+from flask import Flask, render_template, request, session, redirect
 from flask_sqlalchemy import SQLAlchemy
 import sys
 import logging
 
 app = Flask(__name__)
-app.config["SESSION_PERMANENT"] = False 
+app.config["SESSION_PERMANENT"] = False
+app.config["SECRET_KEY"] = "mkciufn49infceii499923@(N#"
 app.config['SQLALCHEMY_DATABASE_URI'] = environ.get('DATABASE_URL') or 'sqlite:///tasks.db'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False 
 app.config["SESSION_TYPE"] = "filesystem"
-Session(app)
+
+
 db = SQLAlchemy(app)
 
 app.logger.addHandler(logging.StreamHandler(sys.stdout))
@@ -105,3 +106,6 @@ def logout():
 
     session["name"] = None 
     return render_template("logout.html")
+
+if __name__ == '__main__':
+    app.run(port=8000)
